@@ -37,16 +37,20 @@ class DatabaseConnection:
         result = self.db.documentDetails.insert_one({"userName": userName, "documentName": documentName, "timestamp": datetime.now(), "documentData": documentData})
         return result.inserted_id
 
-    def getDocument(self, userName, documentName):
+    def fetchDocument(self, userName, documentName):
         return self.db.documentDetails.find({"userName": userName, "documentName": documentName})
+
+    def fetchAlldocuments(self, userName):
+        return self.db.documentDetails.find({"userName": userName})
     
     
 
 if __name__ == '__main__':
     db = DatabaseConnection("identityDB")
-    print(db.addUser("nickghule2", "Nikhil Ghule", "nikhil", "something@email.com", "7744995680", 2))
+    # print(db.addUser("nickghule3", "Nikhil Ghule", "nikhil", "something@email.com", "7744995680", 2))
     print(db.getUser("nickghule2"))
-    print(db.addDocument("nickghule", "test", "doc2"))
-    docs = db.getDocument("nickghule", "test")
+    print(db.addDocument("nickghule", "other", "doc2"))
+    docs = db.fetchDocument("nickghule", "other")
+    docs = db.fetchAlldocuments("nickghule")
     for doc in docs:
         print(doc)

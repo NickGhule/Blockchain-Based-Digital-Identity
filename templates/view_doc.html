@@ -1,0 +1,60 @@
+{% extends "view.html" %}
+{% block docContent %}
+<div class="container-fluid">
+    <div class="content-docName">
+        <figure>
+            <blockquote class="blockquote">
+              <p>Document Name</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+              Issued by : <cite title="Source Title">-----</cite>
+            </figcaption>
+          </figure>
+          <hr style="width:50%;text-align:left;margin-left:0">
+          <dl class="row">
+            <dt class="col-sm-3">Key 1: </dt>
+            <dd class="col-sm-9">Value 1</dd>
+          
+            <dt class="col-sm-3">Key 2: </dt>
+            <dd class="col-sm-9">Value 2</dd>
+            
+    </div>
+</div>
+
+{% endblock docContent %}
+
+{% block docHistory %}
+<div class="container">
+    <div class="rightbox">
+        <div class="rb-container">
+          <ul class="rb">
+            <li class="rb-item" ng-repeat="itembx">
+              <div class="timestamp">
+                3rd May 2020<br> 7:00 PM
+              </div>
+              <div class="item-title">Chris Serrano posted a photo on your wall.</div>
+    
+            </li>
+            <li class="rb-item" ng-repeat="itembx">
+              <div class="timestamp">
+                19th May 2020<br> 3:00 PM
+              </div>
+              <div class="item-title">Mia Redwood commented on your last post.</div>
+    
+            </li>
+    
+            <li class="rb-item" ng-repeat="itembx">
+              <div class="timestamp">
+                17st June 2020<br> 7:00 PM
+              </div>
+              <div class="item-title">Lucas McAlister just send you a message.</div>
+    
+            </li>
+    
+          </ul>
+    
+        </div>
+      </div>
+</div>
+
+{% endblock docHistory %}

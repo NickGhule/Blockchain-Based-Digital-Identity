@@ -10,7 +10,11 @@ class blockchainConnection:
         
         contractBuild = open("build/contracts/digitalID.json", "r").read()
         _abi = json.loads(contractBuild)['abi']
-        _address = "0x38448f15b3FB2Ba7587E4e25dBD5E7e4915ddCB5"  # This address is the address of the contract which changes for every deployment
+        
+        # TODO: Change the address to the address of the contract
+        # This address is the address of the contract which changes for every deployment
+        _address = "0x38448f15b3FB2Ba7587E4e25dBD5E7e4915ddCB5"  
+
         self.contract = self.w3.eth.contract(address = _address, abi = _abi)
 
     def addDocument(self, _userName, _documentID,  _documentHash, _address = None):
