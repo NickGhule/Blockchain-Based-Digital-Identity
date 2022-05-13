@@ -1,7 +1,7 @@
 from web3 import Web3, HTTPProvider
 import json
 
-class blockchainConnection:
+class BlockchainConnection:
     def __init__(self):
         # Connect to the blockchain
         host = '127.0.0.1'
@@ -13,7 +13,7 @@ class blockchainConnection:
         
         # TODO: Change the address to the address of the contract
         # This address is the address of the contract which changes for every deployment
-        _address = "0x38448f15b3FB2Ba7587E4e25dBD5E7e4915ddCB5"  
+        _address = "0xa3a9363f96Db53BA43269a9c47291455545396Fb"  
 
         self.contract = self.w3.eth.contract(address = _address, abi = _abi)
 
@@ -29,6 +29,6 @@ class blockchainConnection:
 
 
 if __name__ == "__main__":
-    bc = blockchainConnection()
-    bc.addDocument("nick", "test", "test")
-    print(bc.getDocumentHistory("nick", "test"))
+    bc = BlockchainConnection()
+    # bc.addDocument("nickghule", "test", "test2")
+    print(bc.getDocumentHistory("nickghule", "test"))

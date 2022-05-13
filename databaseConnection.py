@@ -42,6 +42,13 @@ class DatabaseConnection:
 
     def fetchAlldocuments(self, userName):
         return self.db.documentDetails.find({"userName": userName})
+
+    def shareDocument(self, shareFrom, shareTo, documentId):
+        result = self.db.shareDetails.insert_one({"shareFrom": shareFrom, "shareTo": shareTo, "documentName": documentId})
+        return result.inserted_id
+    
+    def fetchShared(self, userName):
+        return self.db.shareDetails.find({"shareTo": userName})
     
     
 
