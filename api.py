@@ -8,7 +8,7 @@ from bson.json_util import dumps
 import hashlib
 
 from databaseConnection import DatabaseConnection
-# from blockchainConnection import BlockchainConnection
+from blockchainConnection import BlockchainConnection
 
 app = Flask(__name__)
 
@@ -140,11 +140,31 @@ def verify(userName, shareFrom, documentName):
 
 @app.route('/issuer/<string:doc>', methods=['GET', 'POST'])
 def issue(doc):
+    data = json.loads(doc)
+    userName = data.get("username")
+    documentName = data.get("documentName")
+    documentData = data.get("values")
+    db = DatabaseConnection("identityDB")
+    
+    #TODO : check if document already exists
+    #TODO : check if user exists
+    doc = json.loads(doc)
+    if not len(documentData):
+        response = jsonify(json.loads(dumps(({'issued': False}))))
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
+    
+    db.addDocument(userName, documentName, documentData)
 
-    response = jsonify(json.loads(dumps(({'issued': True}))))
+    response = jsonify(json.loads(dumps(({'issued': False}))))
     response.headers.add('Access-Control-Allow-Origin', '*')
-    print(json.loads(doc))
     return response
+    
+    
+    
+    
+    print(json.loads(doc))
+    
 
 
 if __name__ == '__main__':
