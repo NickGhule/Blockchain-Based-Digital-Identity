@@ -20,9 +20,9 @@ class DatabaseConnection:
     def getUser(self, userName):
         return self.db.userDetails.find_one({"_id": userName})
     
-    def addUser(self, userName, name, password, email, phoneNumber, userType):
+    def addUser(self, userName, name, password, userType):
         result = self.db.userDetails.insert_one({"_id": userName, "name": name, 
-                                        "password": password, "email": email, "phoneNumber": phoneNumber, "userType": userType})
+                                        "password": password, "userType": userType})
         return result.inserted_id
         
     def updateUser(self, userName, name, password, email, phoneNumber):
@@ -54,10 +54,10 @@ class DatabaseConnection:
 
 if __name__ == '__main__':
     db = DatabaseConnection("identityDB")
-    # print(db.addUser("nickghule3", "Nikhil Ghule", "nikhil", "something@email.com", "7744995680", 2))
-    print(db.getUser("nickghule2"))
-    print(db.addDocument("nickghule", "other", "doc2"))
-    docs = db.fetchDocument("nickghule", "other")
-    docs = db.fetchAlldocuments("nickghule")
-    for doc in docs:
-        print(doc)
+    print(db.addUser("nickghule", "Nikhil Ghule", "nikhil", 2))
+    # print(db.getUser("nickghule2"))
+    # print(db.addDocument("nickghule", "other", "doc2"))
+    # docs = db.fetchDocument("nickghule", "other")
+    # docs = db.fetchAlldocuments("nickghule")
+    # for doc in docs:
+    #     print(doc)

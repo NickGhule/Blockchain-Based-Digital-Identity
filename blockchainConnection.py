@@ -13,7 +13,7 @@ class BlockchainConnection:
         
         # TODO: Change the address to the address of the contract
         # This address is the address of the contract which changes for every deployment
-        _address = "0xa3a9363f96Db53BA43269a9c47291455545396Fb"  
+        _address = "0xd07aBCeBBcAdcF5eECE55Cc1b9ef28F491F7f38f"  
 
         self.contract = self.w3.eth.contract(address = _address, abi = _abi)
 
