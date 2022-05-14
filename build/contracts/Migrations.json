@@ -671,7 +671,7 @@
   "sourceMap": "69:367:0:-:0;;;94:33;;;-1:-1:-1;;;;;;94:33:0;117:10;94:33;;;69:367;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "69:367:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;132:36;;;;;;;;;160:25:2;;;148:2;133:18;132:36:0;;;;;;;;94:33;;;;;-1:-1:-1;;;;;94:33:0;;;;;;-1:-1:-1;;;;;360:32:2;;;342:51;;330:2;315:18;94:33:0;196:203:2;328:105:0;;;;;;:::i;:::-;;:::i;:::-;;;234:5;;-1:-1:-1;;;;;234:5:0;220:10;:19;204:104;;;;-1:-1:-1;;;204:104:0;;791:2:2;204:104:0;;;773:21:2;830:2;810:18;;;803:30;869:34;849:18;;;842:62;-1:-1:-1;;;920:18:2;;;913:49;979:19;;204:104:0;;;;;;;;391:24:::1;:36:::0;328:105::o;404:180:2:-;463:6;516:2;504:9;495:7;491:23;487:32;484:52;;;532:1;529;522:12;484:52;-1:-1:-1;555:23:2;;404:180;-1:-1:-1;404:180:2:o",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <0.9.0;\r\n\r\ncontract Migrations {\r\n  address public owner = msg.sender;\r\n  uint public last_completed_migration;\r\n\r\n  modifier restricted() {\r\n    require(\r\n      msg.sender == owner,\r\n      \"This function is restricted to the contract's owner\"\r\n    );\r\n    _;\r\n  }\r\n\r\n  function setCompleted(uint completed) public restricted {\r\n    last_completed_migration = completed;\r\n  }\r\n}\r\n",
-  "sourcePath": "D:\\Nikhil\\GitHub\\Blockchain-Based-Digital-identity\\contracts\\Migrations.sol",
+  "sourcePath": "C:\\Users\\LENOVO\\Desktop\\BlockID\\Blockchain-Based-Digital-Identity\\contracts\\Migrations.sol",
   "ast": {
     "absolutePath": "project:/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -1077,8 +1077,8 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x632fc865C6461128Ce7fa95796F1BB625D4563ea",
-      "transactionHash": "0xd3feaf089fde0a1e3f54bed2ebc0cf1a92ddd51f4736b01f59e273de8ca486fc"
+      "address": "0xd4F8b93F1b895269a9442A01B9a217Ce4ED3Cb41",
+      "transactionHash": "0xb0bc120a6ad9ffdc452524cfd8bc72e4fd9432c8a3ebda646700a656dd89ba6b"
     },
     "1651552915174": {
       "events": {},
@@ -1112,7 +1112,7 @@
     }
   },
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-05-14T07:23:41.620Z",
+  "updatedAt": "2022-05-14T16:16:32.032Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
